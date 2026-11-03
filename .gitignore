@@ -1,0 +1,17 @@
+# Credenciais
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets/
+
+# Banco de dados local
+*.db
+*.sqlite
+*.sqlite3
+
+# Python
+__pycache__/
+*.pyc
+.venv/
