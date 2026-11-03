@@ -1,3 +1,4 @@
+from pathlib import Path
 """
 AV03 - Projeto Aplicado I
 Empresa: Schulz S.A.
@@ -25,6 +26,23 @@ BancoDados = classes.BancoDados
 
 
 def main():
+    # Verifica se o banco de dados existe.
+    caminho_banco = Path("schulz_calibracao.db")
+
+    if not caminho_banco.exists():
+        print("Criando banco de dados SQLite...")
+
+        # Lê o script com a estrutura das tabelas.
+        script = Path("03_banco.sql").read_text(
+            encoding="utf-8"
+        )
+
+        # Cria o banco e executa os comandos SQL.
+        with sqlite3.connect(caminho_banco) as conexao:
+            conexao.executescript(script)
+
+        print("Banco criado com sucesso!")
+
     banco = BancoDados()
 
     try:
