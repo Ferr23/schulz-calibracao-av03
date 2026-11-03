@@ -47,4 +47,3 @@ CREATE TABLE tecnicos (
     tipo TEXT NOT NULL
         CHECK (tipo IN ('TECNICO', 'SOLICITANTE'))
 );
-

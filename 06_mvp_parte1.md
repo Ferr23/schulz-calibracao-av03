@@ -277,3 +277,25 @@ de medições e atualização de registros.
 
 O sistema constitui uma base para as próximas
 etapas de desenvolvimento do projeto.
+
+## 12. Inicializacao automatica do banco
+
+Quando o arquivo schulz_calibracao.db nao existe,
+o programa principal utiliza o script 03_banco.sql
+para criar automaticamente as tabelas SQLite.
+
+Essa funcionalidade foi testada em uma pasta separada,
+simulando a primeira execucao no computador do professor.
+
+O teste confirmou a criacao do banco, o cadastro
+de duas medicoes e a geracao do relatorio de calibracao.
+
+Para reproduzir o teste, basta executar:
+
+python3 05_main.py
+
+O arquivo 03_banco.sql deve estar na mesma pasta
+dos arquivos Python.
+
+Cada nova execucao adiciona registros de demonstracao
+ao banco local.
